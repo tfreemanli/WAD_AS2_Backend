@@ -7,7 +7,7 @@ from TWRL.viewsets import *
 route = DefaultRouter()
 route.register('rooms', RoomViewset)
 route.register('reservations', ReservationViewset)
-# route.register('users', UserViewset)
+route.register('users', UserViewset)
 
 urlpatterns = route.urls
 
