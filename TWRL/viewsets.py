@@ -9,12 +9,12 @@ from TWRL.permission import *
 class RoomViewset(viewsets.ModelViewSet):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
-    permission_classes = [AllowAny, IsAuthenticated, IsAdminUser]
+    permission_classes = [AllowAny]
 
 class ReservationViewset(viewsets.ModelViewSet):
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializer
-    permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
+    permission_classes = [IsOwnerOrReadOnly]
 
 class UserViewset(viewsets.ModelViewSet):
     queryset = User.objects.all()
