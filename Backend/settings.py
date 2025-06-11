@@ -74,7 +74,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Backend.wsgi.app'
 
 # added
-ALLOWED_HOST = ["*"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Database
