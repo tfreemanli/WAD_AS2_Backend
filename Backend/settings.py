@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-ig-m&ml_krf5ynqsb8@)&w$81fqatg@vxd4$boi2$_-63r6m!l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# added
+ALLOWED_HOSTS = ["*"] # Allow all hosts for development purposes
 
 
 # Application definition
@@ -73,8 +74,6 @@ TEMPLATES = [
 # WSGI_APPLICATION = 'Backend.wsgi.application'
 WSGI_APPLICATION = 'Backend.wsgi.app'
 
-# added
-ALLOWED_HOSTS = ["*"]
 
 
 # Database
