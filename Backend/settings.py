@@ -70,7 +70,11 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Backend.wsgi.application'
+# WSGI_APPLICATION = 'Backend.wsgi.application'
+WSGI_APPLICATION = 'Backend.wsgi.app'
+
+# added
+ALLOWED_HOST = ["*"]
 
 
 # Database
@@ -78,8 +82,14 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'neondb',
+        'USER': 'neondb_owner',
+        'PASSWORD': 'npg_te6yidRWP1oO',
+        'HOST': 'ep-restless-term-a4ne8w1u-pooler.us-east-1.aws.neon.tech',
+        'PORT': '5432',
     }
 }
 
