@@ -9,13 +9,15 @@ class RoomSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ReservationSerializer(serializers.ModelSerializer):
-    client_name = serializers.ReadOnlyField(source='client.first_name') + ' ' + serializers.ReadOnlyField(source='client.last_name')
-    creator_name = serializers.ReadOnlyField(source='creator.first_name')
+    client_fname = serializers.ReadOnlyField(source='client.first_name')
+    client_lname = serializers.ReadOnlyField(source='client.last_name')
+    creator_fname = serializers.ReadOnlyField(source='creator.first_name')
+    creator_lname = serializers.ReadOnlyField(source='creator.last_name')
     room_name = serializers.ReadOnlyField(source='room.title')
     class Meta:
         model = Reservation
         fields = ['id', 'created_at', 'updated_at', 'title', 'check_in_datetime', 'check_out_datetime',
-         'desc', 'client', 'creator', 'room', 'client_name', 'creator_name', 'room_name']
+         'desc', 'client', 'creator', 'room', 'client_fname', 'client_lname', 'creator_fname', 'creator_lname', 'room_name']
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
