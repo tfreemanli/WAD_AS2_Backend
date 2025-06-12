@@ -1,2 +1,5 @@
 .venv
 .idea
+TWRL/__pycache__
+TWRL/migrations/__pycache__
+Backend/__pycache__

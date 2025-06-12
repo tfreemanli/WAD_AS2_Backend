@@ -59,7 +59,10 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React 开发服务器
     "https://wad-react-tawny.vercel.app",
-    "https://wad-react-8ttn0jyrz-freemans-projects-807d152e.vercel.app",
+]
+# 允许 Vercel 的域名通配符（可选）
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://[\w-]+\.vercel\.app$",  # 允许所有 xxx.vercel.app
 ]
 CORS_ALLOW_CREDENTIALS = True
 
@@ -73,14 +76,9 @@ CORS_ALLOW_METHODS = [
 ]
 CORS_ALLOW_HEADERS = [
     'accept',
-    'accept-encoding',
     'authorization',
     'content-type',
-    'dnt',
-    'origin',
     'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
 ]
 
 ROOT_URLCONF = 'Backend.urls'
