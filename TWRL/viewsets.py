@@ -14,12 +14,12 @@ class RoomViewset(viewsets.ModelViewSet):
 class ReservationViewset(viewsets.ModelViewSet):
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = [AllowAny] #[IsOwnerOrReadOnly]
 
 class UserViewset(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [AllowAny] #[IsAuthenticated, IsAdminUser]
 
     def get_queryset(self):
         if self.request.user.is_superuser:
