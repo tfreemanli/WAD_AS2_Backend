@@ -8,6 +8,8 @@ route = DefaultRouter()
 route.register('rooms', RoomViewset)
 route.register('reservations', ReservationViewset)
 route.register('users', UserViewset)
+route.register('pickroom', PickRoomViewset)
+
 
 urlpatterns = route.urls
 
