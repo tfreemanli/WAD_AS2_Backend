@@ -21,8 +21,8 @@ class UserViewset(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     permission_classes = [AllowAny] #[IsAuthenticated, IsAdminUser]
 
-    def get_queryset(self):
-        if self.request.user.is_superuser:
-            return User.objects.all()
-        else:
-            return User.objects.filter(id=self.request.user.id)
+    # def get_queryset(self):
+    #     if self.request.user.is_superuser:
+    #         return User.objects.all()
+    #     else:
+    #         return User.objects.filter(id=self.request.user.id)
