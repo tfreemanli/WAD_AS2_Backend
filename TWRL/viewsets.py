@@ -35,8 +35,8 @@ class PickRoomViewset(viewsets.ModelViewSet):
     def get_queryset(self):
         
         queryset = Room.objects.all().order_by('room_number')
-        startDT = self.request.GET.get('startDT')
-        endDT = self.request.GET.get('endDT')
+        startDT = self.request.query_params.get('startDT')
+        endDT = self.request.query_params.get('endDT')
 
         if startDT and endDT:
             try:
