@@ -7,17 +7,17 @@ from TWRL.permission import *
 
 
 class RoomViewset(viewsets.ModelViewSet):
-    queryset = Room.objects.all()
+    queryset = Room.objects.all().order_by('id')
     serializer_class = RoomSerializer
     permission_classes = [AllowAny]
 
 class ReservationViewset(viewsets.ModelViewSet):
-    queryset = Reservation.objects.all()
+    queryset = Reservation.objects.all().order_by('check_in_datetime')
     serializer_class = ReservationSerializer
     permission_classes = [AllowAny] #[IsOwnerOrReadOnly]
 
 class UserViewset(viewsets.ModelViewSet):
-    queryset = User.objects.all()
+    queryset = User.objects.all().order_by('id')
     serializer_class = UserSerializer
     permission_classes = [AllowAny] #[IsAuthenticated, IsAdminUser]
 
