@@ -55,3 +55,9 @@ class PickRoomViewset(viewsets.ModelViewSet):
                 pass
 
         return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['startDT'] = self.request.query_params.get('startDT', '')
+        context['endDT'] = self.request.query_params.get('endDT', '')
+        return context
