@@ -5,10 +5,12 @@ from TWRL.views import *
 from TWRL.viewsets import *
 
 route = DefaultRouter()
-route.register('rooms', RoomViewset)
-route.register('reservations', ReservationViewset)
-route.register('users', UserViewset)
-route.register('pickaroom', PickRoomViewset, basename="myreservation")
+route.register('rooms', RoomViewset, basename="rooms")
+route.register('reservations', ReservationViewset, basename="managereservations")
+route.register('myreservations', MyReservationViewset, basename="myreservations")
+route.register('users', UserViewset, basename="manageusers")
+route.register('profile', ProfileViewset, basename="profile")
+route.register('pickaroom', PickRoomViewset, basename="pickaroom") 
 
 
 urlpatterns = route.urls
