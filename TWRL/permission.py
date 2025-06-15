@@ -14,5 +14,5 @@ class IsAdminOrReadOnly(permissions.BasePermission):
             return True
             
         # 对于非安全方法，要求用户是超级用户
-        print(f"User is superuser: {request.user.is_superuser}")
-        return request.user.is_superuser
+        print(f"User is staff: {request.user.is_staff}")
+        return request.user.is_staff
